@@ -17,9 +17,6 @@ RUN mkdir /root/.ssh
 
 COPY alpine_sshd_id_rsa.pub /root/.ssh/authorized_keys
 
-RUN /usr/bin/ssh-keygen -A
-
-
 EXPOSE 80
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["/usr/sbin/sshd", "-D"]
